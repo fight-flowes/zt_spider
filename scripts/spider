@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PYTHON_BIN="${SPIDER_PYTHON:-python3}"
+
+command -v "$PYTHON_BIN" >/dev/null 2>&1 || {
+  printf 'error: Python interpreter not found: %s\n' "$PYTHON_BIN" >&2
+  exit 2
+}
+
+exec "$PYTHON_BIN" "$ROOT/spider_cli.py" "$@"

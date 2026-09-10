@@ -1,0 +1,15 @@
+# Local authentication and legacy secrets
+.env
+cookies.json
+config.json
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+
+# Generated and downloaded datasets
+data/local/
+data/csv/
+
+# Jupyter temporary files
+.ipynb_checkpoints/
